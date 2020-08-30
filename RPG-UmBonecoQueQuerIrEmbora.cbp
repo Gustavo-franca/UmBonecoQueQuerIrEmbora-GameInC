@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="RPG-UmBonecoQueQuerIrEmbora" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/RPG-UmBonecoQueQuerIrEmbora" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/RPG-UmBonecoQueQuerIrEmbora" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="src/Controllers/Arena/ArenaController.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Controllers/Arena/ArenaController.h" />
+		<Unit filename="src/Controllers/ElementController/ElementController.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Controllers/ElementController/ElementController.h" />
+		<Unit filename="src/Controllers/GameController/GameController.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Controllers/GameController/GameController.h" />
+		<Unit filename="src/Controllers/MenuController/MenuController.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Controllers/MenuController/MenuController.h" />
+		<Unit filename="src/Controllers/PlayerController/PlayerController.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Controllers/PlayerController/PlayerController.h" />
+		<Unit filename="src/GameMaps/GameMap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/GameMaps/GameMaps.h" />
+		<Unit filename="src/GameMaps/level1/level1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/GameMaps/level1/level1.h" />
+		<Unit filename="src/Modules/Arena/Arena.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Modules/Arena/Arena.h" />
+		<Unit filename="src/Modules/Door/door.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Modules/Door/door.h" />
+		<Unit filename="src/Modules/Element/ElementList/ElementList.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Modules/Element/ElementList/ElementList.h" />
+		<Unit filename="src/Modules/Element/element.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Modules/Element/element.h" />
+		<Unit filename="src/Modules/Map/Map.h" />
+		<Unit filename="src/Modules/Map/map.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Modules/MenuOptions/MenuOptions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Modules/MenuOptions/MenuOptions.h" />
+		<Unit filename="src/Modules/Player/player.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Modules/Player/player.h" />
+		<Unit filename="src/Modules/Properties/properties.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Modules/Properties/properties.h" />
+		<Unit filename="src/Uteis/console/console.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Uteis/console/console.h" />
+		<Unit filename="src/Uteis/pickUpKey/pickUpKey.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Uteis/pickUpKey/pickUpKey.h" />
+		<Unit filename="src/View/Arena/ArenaView.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/View/Arena/ArenaView.h" />
+		<Unit filename="src/View/Menu/MenuView.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/View/Menu/MenuView.h" />
+		<Unit filename="src/View/ScreanView.h" />
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
