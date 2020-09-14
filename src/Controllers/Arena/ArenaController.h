@@ -11,7 +11,7 @@ void  ArenaController_Resume();
 void  ArenaController_Pause();
 
 int ArenaController_MovePlayer(Player* player,int forPositionX, int forPositionY);
-
+int ArenaController_Move(ElementList* elementList,int forPositionX, int forPositionY);
 ElementList* ArenaController_removethisElement(Element* element,int positionX, int positionY);
 void ArenaController_restart();
 

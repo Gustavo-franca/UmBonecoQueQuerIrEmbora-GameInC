@@ -8,4 +8,5 @@
 int LevelController_initialize(int level,Player* player);
 int LevelController_start(time_t initial);
 void LevelController_resume();
+void LevelController_Finished();
 #endif // LEVELCONTROLLER_H_INCLUDED

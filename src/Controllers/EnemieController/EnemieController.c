@@ -1,36 +1,12 @@
 #include "stdlib.h"
+#include <unistd.h>
+#include <windows.h>
+
 #include "EnemieController.h"
 #include "../../Modules/Enemie/Enemie.h"
 #include "../../Modules/Arena/Arena.h"
+#include "../Arena/ArenaController.h"
 
-
-
-void EnemieController_Move(ElementList* arena){
-
-    ElementList* enemiesList = ArenaController_getEnemies();
-
-   /* Element* ElementList_returnElementIn(ElementList* elementList,int positionX , int positionY);*/
-    ElementList* enemies;
-    Sleep(200); // sincronização entre treads
-
-    for(enemies = enemiesList; enemies != NULL; enemies = enemies->prox) {
-            int typeMove = Enemie_getTypeMove(enemies->element);
-            switch(typeMove){
-            case 0:
-                 Enemie_moveRandom(enemies);
-            break;
-            case 1 :
-                Enemie_moveVertical(enemies);
-            break;
-            case 2 :
-                Enemie_moveHorizontal(enemies);
-            break;
-
-            }
-
-    }
-
-}
 
 void   Enemie_moveHorizontal(ElementList* enemies){
 
@@ -87,14 +63,12 @@ void   Enemie_moveVertical(ElementList* enemies){
 void Enemie_moveRandom(ElementList* enemies){
     int positionX ;
     int positionY ;
-    int i;
     int lower;
     int upper;
     int direction;
  do{
             positionX = 0;
             positionY = 0;
-            i = 0;
             lower = 1;
             upper = 4;
             direction = (rand() % (upper - lower + 1)) + lower;
@@ -122,4 +96,31 @@ void Enemie_moveRandom(ElementList* enemies){
 }
 
 
+
+void EnemieController_Move(ElementList* arena){
+
+    ElementList* enemiesList = ArenaController_getEnemies();
+
+   /* Element* ElementList_returnElementIn(ElementList* elementList,int positionX , int positionY);*/
+    ElementList* enemies;
+    Sleep(200); // sincronização entre treads
+
+    for(enemies = enemiesList; enemies != NULL; enemies = enemies->prox) {
+            int typeMove = Enemie_getTypeMove(enemies->element);
+            switch(typeMove){
+            case 0:
+                 Enemie_moveRandom(enemies);
+            break;
+            case 1 :
+                Enemie_moveVertical(enemies);
+            break;
+            case 2 :
+                Enemie_moveHorizontal(enemies);
+            break;
+
+            }
+
+    }
+
+}
 

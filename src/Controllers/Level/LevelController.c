@@ -1,5 +1,10 @@
 #include "LevelController.h"
 #include <time.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include "../PlayerController/PlayerController.h"
+#include "../../Uteis/pickUpKey/pickUpKey.h"
+#include "../../GameMaps/GameMaps.h"
 #include "../Arena/ArenaController.h"
 #include "../../View/Arena/ArenaView.h"
 #include "../GameController/GameController.h"
@@ -59,7 +64,7 @@ int getKeyboard_key(){
 int LevelController_isFinished(){
     return this.isFinished;
 }
-LevelController_PlayerIsDeath(){
+int LevelController_PlayerIsDeath(){
     return Player_isDeath(this.player);
 }
 void LevelController_Finished(){
@@ -154,7 +159,7 @@ int LevelController_start(time_t initial){
         }
 
 
-    Element* avatar = Player_getAvatar(this.player);
+
 
 
      usleep(50000);

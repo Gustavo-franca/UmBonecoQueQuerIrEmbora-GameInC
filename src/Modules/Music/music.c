@@ -2,13 +2,14 @@
 #include <windows.h>
 #include <mmsystem.h>
 #include <pthread.h>
+#include <unistd.h>
 #include "../../Uteis/thread/threadUtil.h"
 
 pthread_t* idMenu;
 pthread_t* idGame;
 
 
-int ThreadMenuMusic(void* arg){
+void* ThreadMenuMusic(void* arg){
   Thread* data = (Thread*)arg;
     int* signal = data->signal;
 
@@ -33,7 +34,7 @@ int ThreadMenuMusic(void* arg){
     return (void*)0;
 }
 
-int ThreadGameMusic(void* arg){
+void* ThreadGameMusic(void* arg){
   Thread* data = (Thread*)arg;
     int* signal = data->signal;
 

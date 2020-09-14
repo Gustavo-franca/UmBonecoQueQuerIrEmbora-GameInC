@@ -36,7 +36,8 @@ int Enemie_getTypeMove(Element* enemie){
 int direction = 4;
 void Enemie_setDirection(Element* enemie,int number){
     EnemiesProps* props = (EnemiesProps*) Element_getEspecProps(enemie);
-    return props->direction  = number;
+    props->direction  = number;
+     return;
 }
 int Enemie_getDirection(Element* enemie){
     EnemiesProps* props = (EnemiesProps*) Element_getEspecProps(enemie);

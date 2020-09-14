@@ -14,8 +14,6 @@ int main()
 
 
     setWindow(SCREAN_WIDTH,SCREAN_HEIGTH);
-  int exitLoop = 0;
-
     do{
 	switch(GameController_Menu()){
         case GAME_START:;

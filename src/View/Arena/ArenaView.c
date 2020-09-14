@@ -2,8 +2,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
 #include "../../Uteis/console/console.h"
 #include "../../Modules/Element/element.h"
+#include "../../Controllers/Arena/ArenaController.h"
 
 #include "../ScreanView.h"
 
@@ -77,7 +79,7 @@ void ArenaView_Refresh(ElementList* arena){
         if(Element_IsRemoved(elementFind->element) == 1){
                 ElementList * aux = elementFind;
                 elementFind = elementFind->prox;
-                arena = ArenaController_removethisElement(arena,aux->element,aux->positionX,aux->positionY);
+                arena = ArenaController_removethisElement(aux->element,aux->positionX,aux->positionY);
                 cache = ElementList_removethisElement(cache,aux->element,aux->positionX,aux->positionY);
                 if(elementFind == NULL){
                 break;
@@ -98,7 +100,7 @@ void ArenaView_renderLevel(int level){
     Sleep(1000);
     system("cls");
     gotoxy(SCREAN_WIDTH/2 ,SCREAN_HEIGTH/2);
-    printf("3",level);
+    printf("3");
     Sleep(1000);
     gotoxy(SCREAN_WIDTH/2 ,SCREAN_HEIGTH/2);
     printf("2");

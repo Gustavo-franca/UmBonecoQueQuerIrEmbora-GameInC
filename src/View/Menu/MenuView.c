@@ -3,6 +3,7 @@
 #include "../../Uteis/console/console.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "../ScreanView.h"
 
 #define BASEX 35

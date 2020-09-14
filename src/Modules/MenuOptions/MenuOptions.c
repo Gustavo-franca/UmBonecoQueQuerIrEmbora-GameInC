@@ -1,5 +1,6 @@
 #include "MenuOptions.h"
 #include <stdlib.h>
+#include <string.h>
 
 MenuOptions* MenuOptions_Create(){
     return NULL;
@@ -36,9 +37,10 @@ MenuOptions* MenuOptions_findByIdAndSelectOption(MenuOptions* optionsList, int i
                 return optionFind;
             }
     }
+    return NULL;
 }
 
 char* MenuOptions_getLabel(MenuOptions* options, int id){
     MenuOptions* option =  MenuOptions_findByIdAndSelectOption(options,id);
-    return &option->label;
+    return (char *) &option->label;
 }

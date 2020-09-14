@@ -1,5 +1,6 @@
 #include "BarView.h"
 #include <time.h>
+#include <stdio.h>
 #include "../../Uteis/console/console.h"
 
 

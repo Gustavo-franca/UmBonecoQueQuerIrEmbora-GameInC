@@ -2,28 +2,12 @@
 #include "../../Modules/Element/ElementList/ElementList.h"
 #include "../EnemieController/EnemieController.h"
 #include "../../Modules/Player/player.h"
+#include "../Arena/ArenaController.h"
+#include "../Level/LevelController.h"
 
 void *ElementController_Change(ElementList* arena){
-   /*  switch(Element_type(actorElement)){
-    case BACKGROUND_TYPE :
-    break;
-    case WALL_TYPE :
-    break;
-    case OBJECT_TYPE :
-    break;
-    case OBJECT_TYPE_KEY :
-    break;
-    case OBJECT_TYPE_DOOR :
-    break;
-    case ENEMIES_TYPE :*/
         EnemieController_Move(arena);
-    /*
-    break;
-    default:
-    break;
-
-    }
-*/
+        return (void *)0;
 }
 void ElementControllerRunEnimiesActionIn(Element* enemieElement,Element*targetElement){
 
@@ -48,6 +32,7 @@ void ElementControllerRunEnimiesActionIn(Element* enemieElement,Element*targetEl
     break;
 
     }
+    return;
 }
 
 

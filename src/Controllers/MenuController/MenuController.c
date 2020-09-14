@@ -1,6 +1,7 @@
 #include "MenuController.h"
 #include <stdlib.h>
-#include <unistd.h> // usleep
+#include <windows.h>
+#include <unistd.h>
 #include "../../View/Menu/MenuView.h"
 #include "../../Uteis/pickUpKey/pickUpKey.h"
 #include "../../Uteis/console/console.h"
@@ -106,4 +107,5 @@ int  MenuController_Ask(MenuOptions* menuOption){
       usleep(1000); // aguarda um tempo
 
      }
+     return 0;
  }

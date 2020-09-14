@@ -17,4 +17,6 @@ int GameController_Menu();
 int GameController_start(int level);
 int GameController_play(time_t initial);
 void GameController_congratulations();
+int GameController_exit();
+int GameController_Pause();
 #endif // GAMECONTROLLER_H_INCLUDED

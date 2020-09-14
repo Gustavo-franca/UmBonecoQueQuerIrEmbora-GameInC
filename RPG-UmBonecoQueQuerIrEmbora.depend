@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1600098959 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\main.c
+1600102115 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\main.c
 	<stdio.h>
 	"Controllers/GameController/GameController.h"
 	"Uteis/console/console.h"
@@ -97,11 +97,11 @@
 	"../GameController/GameController.h"
 	"../../View/Bar/BarView.h"
 
-1600096401 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\arena\arenacontroller.h
+1600101953 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\arena\arenacontroller.h
 	"../../Modules/Arena/Arena.h"
 	<time.h>
 
-1600098424 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\gamecontroller\gamecontroller.c
+1600102769 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\gamecontroller\gamecontroller.c
 	"GameController.h"
 	<unistd.h>
 	<stdlib.h>
@@ -114,11 +114,12 @@
 	"../../Modules/MenuOptions/MenuOptions.h"
 	"../../View/Menu/MenuView.h"
 	"../../Modules/Player/player.h"
+	"../PlayerController/PlayerController.h"
 	"../MenuController/MenuController.h"
 	"../Level/LevelController.h"
 	"../../Modules/Music/music.h"
 
-1600098234 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\gamecontroller\gamecontroller.h
+1600102052 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\gamecontroller\gamecontroller.h
 	"../../Modules/Player/player.h"
 	<time.h>
 
@@ -159,12 +160,14 @@
 1599442977 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\modules\element\elementlist\elementlist.h
 	"../element.h"
 
-1600020830 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\view\arena\arenaview.c
+1600102522 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\view\arena\arenaview.c
 	"ArenaView.h"
 	<stdio.h>
 	<stdlib.h>
+	<windows.h>
 	"../../Uteis/console/console.h"
 	"../../Modules/Element/element.h"
+	"../../Controllers/Arena/ArenaController.h"
 	"../ScreanView.h"
 
 1598210616 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\view\arena\arenaview.h
@@ -181,31 +184,35 @@
 	"properties.h"
 	<stdlib.h>
 
-1600015020 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\elementcontroller\elementcontroller.c
+1600101024 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\elementcontroller\elementcontroller.c
 	"ElementController.h"
 	"../../Modules/Element/ElementList/ElementList.h"
 	"../EnemieController/EnemieController.h"
 	"../../Modules/Player/player.h"
+	"../Arena/ArenaController.h"
+	"../Level/LevelController.h"
 
-1599515656 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\elementcontroller\elementcontroller.h
+1600100960 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\elementcontroller\elementcontroller.h
 	"../../Modules/Element/element.h"
 	"../../Modules/Properties/properties.h"
 	"../../Modules/Element/ElementList/ElementList.h"
 
 1600017327 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\modules\menuoptions\menuoptions.h
 
-1600016827 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\modules\menuoptions\menuoptions.c
+1600102212 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\modules\menuoptions\menuoptions.c
 	"MenuOptions.h"
 	<stdlib.h>
+	<string.h>
 
 1599523748 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\view\menu\menuview.h
 	"../../Modules/MenuOptions/MenuOptions.h"
 
-1600019714 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\view\menu\menuview.c
+1600102482 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\view\menu\menuview.c
 	"MenuView.h"
 	"../../Uteis/console/console.h"
 	<stdio.h>
 	<string.h>
+	<stdlib.h>
 	"../ScreanView.h"
 
 1599597296 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\playercontroller\playercontroller.c
@@ -215,9 +222,10 @@
 1599597295 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\playercontroller\playercontroller.h
 	"../../Modules/Player/player.h"
 
-1600094258 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\menucontroller\menucontroller.c
+1600103004 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\menucontroller\menucontroller.c
 	"MenuController.h"
 	<stdlib.h>
+	<windows.h>
 	<unistd.h>
 	"../../View/Menu/MenuView.h"
 	"../../Uteis/pickUpKey/pickUpKey.h"
@@ -229,25 +237,33 @@
 
 1598209447 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\view\screanview.h
 
-1599513307 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\modules\enemie\enemie.c
+1600102134 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\modules\enemie\enemie.c
 	"Enemie.h"
 	<stdlib.h>
 
-1599515550 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\enemiecontroller\enemiecontroller.c
+1600101981 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\enemiecontroller\enemiecontroller.c
 	"stdlib.h"
+	<unistd.h>
+	<windows.h>
 	"EnemieController.h"
 	"../../Modules/Enemie/Enemie.h"
 	"../../Modules/Arena/Arena.h"
+	"../Arena/ArenaController.h"
 
 1599450956 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\enemiecontroller\enemiecontroller.h
 	"../../Modules/Element/ElementList/ElementList.h"
 
-1599512541 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\modules\enemie\enemie.h
+1600102008 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\modules\enemie\enemie.h
 	"../Element/ElementList/ElementList.h"
 
-1600098373 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\level\levelcontroller.c
+1600101676 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\level\levelcontroller.c
 	"LevelController.h"
 	<time.h>
+	<stdlib.h>
+	<unistd.h>
+	"../PlayerController/PlayerController.h"
+	"../../Uteis/pickUpKey/pickUpKey.h"
+	"../../GameMaps/GameMaps.h"
 	"../Arena/ArenaController.h"
 	"../../View/Arena/ArenaView.h"
 	"../GameController/GameController.h"
@@ -256,13 +272,15 @@
 	"../../Uteis/console/console.h"
 	"../../Modules/Music/music.h"
 
-1600098397 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\level\levelcontroller.h
+1600100862 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\controllers\level\levelcontroller.h
 	<time.h>
 	"../../Modules/Player/player.h"
 
-1600092816 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\uteis\thread\threadutil.c
+1600103609 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\uteis\thread\threadutil.c
 	"threadUtil.h"
 	<stdlib.h>
+	<windows.h>
+	<stdio.h>
 
 1600092465 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\uteis\thread\threadutil.h
 	<pthread.h>
@@ -272,9 +290,10 @@
 	"../../Modules/Player/player.h"
 	<time.h>
 
-1600098730 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\view\bar\barview.c
+1600102370 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\view\bar\barview.c
 	"BarView.h"
 	<time.h>
+	<stdio.h>
 	"../../Uteis/console/console.h"
 
 1600021211 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\gamemaps\level2\level.h
@@ -286,12 +305,13 @@
 	<stdlib.h>
 	"../../Modules/Enemie/Enemie.h"
 
-1600093806 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\modules\music\music.h
+1600101474 c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\modules\music\music.h
 
-1600093856 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\modules\music\music.c
+1600102313 source:c:\users\gusta\documents\faculdade\estrutura de dados\rpg-umbonecoquequerirembora\src\modules\music\music.c
 	"music.h"
 	<windows.h>
 	<mmsystem.h>
 	<pthread.h>
+	<unistd.h>
 	"../../Uteis/thread/threadUtil.h"
 

@@ -11,11 +11,57 @@
 #include "../../Modules/MenuOptions/MenuOptions.h"
 #include "../../View/Menu/MenuView.h"
 #include "../../Modules/Player/player.h"
+#include "../PlayerController/PlayerController.h"
 #include "../MenuController/MenuController.h"
 #include "../Level/LevelController.h"
 #include "../../Modules/Music/music.h"
 int exitGame = 0;
 
+
+int GameController_Pause(){
+    //system("cls");
+
+    MenuOptions* menuOption = MenuOptions_Create();
+    //declara o texto das opções de pause e as opções
+    char option1[40];strcpy(option1,"Continue game");char * ptOption1 = option1;
+    char option2[40];strcpy(option2,"Restart game");char * ptOption2 = option2;
+    char option3[40];strcpy(option3,"Options");char * ptOption3 = option3;
+    char option4[40];strcpy(option4,"Exit game");char * ptOption4 = option4;
+     menuOption = MenuOptions_Insert(menuOption,0,ptOption1);
+     menuOption = MenuOptions_Insert(menuOption,1,ptOption2);
+     menuOption = MenuOptions_Insert(menuOption,2,ptOption3);
+     menuOption = MenuOptions_Insert(menuOption,3,ptOption4);
+
+    int optionsLenght = 4;
+
+    //tratar a ação dos ids de pause    MenuView_showWithLabel(menuOption,optionsLenght);
+
+    int optionSelected = MenuController_Run(menuOption,optionsLenght);
+
+
+
+       switch(optionSelected){
+        case 0:
+            return GAME_CONTINUE;
+        break;
+        case 1:
+          //  GameController_start();
+            return GAME_RESTART;
+        break;
+        case 2://options
+            return GAME_CONTINUE;
+        break;
+        case 3:
+            if(GameController_exit()== 1){
+                return GAME_EXIT;
+            }
+            return GAME_CONTINUE;
+        break;
+
+    }
+return 0;
+
+}
 
 void GameController_congratulations(){
 
@@ -115,10 +161,9 @@ int GameController_play(time_t initial){
 }
 
 int GameController_start(int level){
-    system("cls");
+   system("cls");
 
     Player* player = PlayerController_create('p',COLOR_BLUE);
-
     if(!(LevelController_initialize(level,player))){
         return GAME_FINISHED;
     };
@@ -129,51 +174,6 @@ int GameController_start(int level){
 
 }
 
-
-int GameController_Pause(time_t initial){
-    //system("cls");
-
-    MenuOptions* menuOption = MenuOptions_Create();
-    //declara o texto das opções de pause e as opções
-    char option1[40];strcpy(option1,"Continue game");char * ptOption1 = option1;
-    char option2[40];strcpy(option2,"Restart game");char * ptOption2 = option2;
-    char option3[40];strcpy(option3,"Options");char * ptOption3 = option3;
-    char option4[40];strcpy(option4,"Exit game");char * ptOption4 = option4;
-     menuOption = MenuOptions_Insert(menuOption,0,ptOption1);
-     menuOption = MenuOptions_Insert(menuOption,1,ptOption2);
-     menuOption = MenuOptions_Insert(menuOption,2,ptOption3);
-     menuOption = MenuOptions_Insert(menuOption,3,ptOption4);
-
-    int optionsLenght = 4;
-
-    //tratar a ação dos ids de pause    MenuView_showWithLabel(menuOption,optionsLenght);
-
-    int optionSelected = MenuController_Run(menuOption,optionsLenght);
-
-
-
-       switch(optionSelected){
-        case 0:
-            return GAME_CONTINUE;
-        break;
-        case 1:
-          //  GameController_start();
-            return GAME_RESTART;
-        break;
-        case 2://options
-            return GAME_CONTINUE;
-        break;
-        case 3:
-            if(GameController_exit()== 1){
-                return GAME_EXIT;
-            }
-            return GAME_CONTINUE;
-        break;
-
-    }
-return 0;
-
-}
 
 
 int GameController_Menu(){

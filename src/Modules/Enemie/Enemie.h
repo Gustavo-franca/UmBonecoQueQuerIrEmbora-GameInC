@@ -10,7 +10,9 @@
 #define UP 3
 #define DOWN 4
 /*void Enemie_move(Enemie* enemie);*/
+Element* Enemie_create(char symbol,int color,int typeMove);
 int Enemie_getTypeMove(Element* enemie);
 void Enemie_setDirection(Element* enemie,int number);
 int Enemie_getDirection(Element* enemie);
+
 #endif // ENEMIE_H_INCLUDED

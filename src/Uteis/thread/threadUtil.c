@@ -1,5 +1,7 @@
 #include "threadUtil.h"
 #include <stdlib.h>
+#include <windows.h>
+#include <stdio.h>//TEMP
 
 typedef struct _ThreadList ThreadList;
 
@@ -76,7 +78,10 @@ int Thread_Stop(pthread_t * id){
         return 0;
     }
     *thread->thread->signal = THREAD_KILL;
-     while( *thread->thread->signal != THREAD_KILLED );
+     while( *thread->thread->signal != THREAD_KILLED ){
+         Sleep(10);
+     }
+
       Threads = ThreadList_removeThreadWithId(Threads,*id);
     return 1;
  }
@@ -87,7 +92,10 @@ void Thread_StopAll(){
 
     }
     for(ThreadFind = Threads; ThreadFind != NULL; ThreadFind = ThreadFind->prox) {
-            while( *ThreadFind->thread->signal != THREAD_KILLED );
+            while( *ThreadFind->thread->signal != THREAD_KILLED ){
+                Sleep(10);
+            }
+
     }
     while(Threads != NULL){
         ThreadFind = Threads;
