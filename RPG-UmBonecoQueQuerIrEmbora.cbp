@@ -39,10 +39,18 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Controllers/ElementController/ElementController.h" />
+		<Unit filename="src/Controllers/EnemieController/EnemieController.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Controllers/EnemieController/EnemieController.h" />
 		<Unit filename="src/Controllers/GameController/GameController.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Controllers/GameController/GameController.h" />
+		<Unit filename="src/Controllers/Level/LevelController.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Controllers/Level/LevelController.h" />
 		<Unit filename="src/Controllers/MenuController/MenuController.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -59,6 +67,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/GameMaps/level1/level1.h" />
+		<Unit filename="src/GameMaps/level2/level.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/GameMaps/level2/level.h" />
 		<Unit filename="src/Modules/Arena/Arena.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -75,6 +87,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Modules/Element/element.h" />
+		<Unit filename="src/Modules/Enemie/Enemie.h" />
+		<Unit filename="src/Modules/Enemie/enemie.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/Modules/Map/Map.h" />
 		<Unit filename="src/Modules/Map/map.c">
 			<Option compilerVar="CC" />
@@ -91,18 +107,38 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Modules/Properties/properties.h" />
+		<Unit filename="src/Uteis/Sound/index.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Uteis/Sound/index.h" />
+		<Unit filename="src/Uteis/chainedList/lista.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Uteis/chainedList/lista.h" />
 		<Unit filename="src/Uteis/console/console.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Uteis/console/console.h" />
+		<Unit filename="src/Uteis/keyboardControl/keyboardControl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Uteis/keyboardControl/keyboardControl.h" />
 		<Unit filename="src/Uteis/pickUpKey/pickUpKey.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Uteis/pickUpKey/pickUpKey.h" />
+		<Unit filename="src/Uteis/thread/threadUtil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Uteis/thread/threadUtil.h" />
 		<Unit filename="src/View/Arena/ArenaView.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/View/Arena/ArenaView.h" />
+		<Unit filename="src/View/Bar/BarView.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/View/Bar/BarView.h" />
 		<Unit filename="src/View/Menu/MenuView.c">
 			<Option compilerVar="CC" />
 		</Unit>

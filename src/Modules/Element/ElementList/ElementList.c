@@ -106,9 +106,17 @@ ElementList* ElementList_removethisElement(ElementList* elementList,Element* ele
 
     free(currentElement); // libera memoria do elemento atual
     return elementList;
+}
 
-
-
+ElementList* ElementList_AllElementType(ElementList* arena,int type){
+    ElementList * listType = ElementList_create();
+    ElementList* elementFind;
+    for(elementFind = arena; elementFind != NULL; elementFind = elementFind->prox) {
+        if(Element_type(elementFind->element) == type){
+          listType = ElementList_insert(listType,elementFind->element,elementFind->positionX,elementFind->positionY);
+        }
+    }
+    return listType;
 }
 
 

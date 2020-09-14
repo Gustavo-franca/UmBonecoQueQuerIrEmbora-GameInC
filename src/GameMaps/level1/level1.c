@@ -1,6 +1,7 @@
 #include "level1.h"
 #include "../../Uteis/console/console.h"
-
+#include <stdlib.h>
+#include "../../Modules/Enemie/Enemie.h"
 
 
 
@@ -10,16 +11,28 @@ Map* Level1_getMap(){
 
     Map_SetinitialPlayerPosition(map1,5,5);
 
-    Element* wall = Element_create(WALL_TYPE,(char)219,COLOR_MAGENTA);
+    Element* wall = Element_create(WALL_TYPE,(char)219,COLOR_MAGENTA,NULL);
 
-    Element* door = Element_create(OBJECT_TYPE_DOOR,(char)178,COLOR_BROWN);
+    Element* door = Element_create(OBJECT_TYPE_DOOR,(char)178,COLOR_BROWN,NULL);
 
 
-    Element* key = Element_create(OBJECT_TYPE_KEY,(char)170,COLOR_BROWN);
+    Element* key = Element_create(OBJECT_TYPE_KEY,(char)170,COLOR_BROWN,NULL);
+
+    Element* enemieH = Enemie_create('M',COLOR_RED,ENEMIE_DIRECTION_HORIZONTAL);
+    Element* enemieV = Enemie_create('M',COLOR_RED,ENEMIE_DIRECTION_VERTICAL);
+    Element* enemieR = Enemie_create('M',COLOR_RED,ENEMIE_DIRECTION_RANDOM);
+
+    /*insert Enemies element*/
+    Map_insertEnimiesElements(map1,60,10,enemieH);
+    Map_insertEnimiesElements(map1,74,20,enemieH);
+    Map_insertEnimiesElements(map1,75,6,enemieV);
+    Map_insertEnimiesElements(map1,16,19,enemieR);
+    Map_insertEnimiesElements(map1,10,5,enemieR);
+   // Map_insertEnimiesElements(map1,60,13,Enemie);
 
     Map_insertObjectElements(map1,14,2,door);
    // Map_insertObjectElements(map1,75,2,key);
-    Map_insertObjectElements(map1,15,4,key);
+    Map_insertObjectElements(map1,73,3,key);//73,3
 
 
 /*Create Map*/

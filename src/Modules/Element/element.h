@@ -7,7 +7,7 @@
 typedef struct _Element Element;
 
 
-Element* Element_create(int type,char symbol,int color);
+Element* Element_create(int type,char symbol,int color,void * espec);
 
 int Element_getColor(Element*  element);
 int Element_setColor(Element*  element, int color);
@@ -32,5 +32,7 @@ int Element_IsRemoved(Element* targetElement);
 int Element_setKey(Element* playerElement);
 
 int Element_getKey(Element* playerElement);
+
+void * Element_getEspecProps(Element* element);
 
 #endif // ELEMENT_H_INCLUDED

@@ -2,34 +2,42 @@
 #include "MenuView.h"
 #include "../../Uteis/console/console.h"
 #include <stdio.h>
+#include <string.h>
 #include "../ScreanView.h"
 
 #define BASEX 35
 #define BASEY 8
 
 int optionSelectPreviously;
-
+void MenuView_RenderInCenter(MenuOptions* menuOption){
+        system("cls");
+        char * label = MenuOptions_getLabel(menuOption,0);
+        int length = strlen(label);
+        setColor(COLOR_WHITE);
+        gotoxy((SCREAN_WIDTH/2 - length/2) ,(SCREAN_HEIGTH/2));
+        printf("%s",label );
+}
 void MenuView_AskRefresh(MenuOptions* menuOption, int istrue){
         if(istrue){
             setColor(COLOR_RED);
 
-            gotoxy(SCREAN_WIDTH/2 ,(SCREAN_HEIGTH/2));
+            gotoxy(SCREAN_WIDTH/2 - 7 ,(SCREAN_HEIGTH/2));
             printf("YES");
 
             setColor(COLOR_WHITE);
-            gotoxy(SCREAN_WIDTH/2 + 10 ,(SCREAN_HEIGTH/2) );
+            gotoxy(SCREAN_WIDTH/2 + 3 ,(SCREAN_HEIGTH/2) );
             printf("NO");
-               gotoxy(SCREAN_WIDTH/2 -1 ,(SCREAN_HEIGTH/2));
+               gotoxy(SCREAN_WIDTH/2 -8 ,(SCREAN_HEIGTH/2));
 
         }else{
             setColor(COLOR_WHITE);
-            gotoxy(SCREAN_WIDTH/2 ,(SCREAN_HEIGTH/2));
+            gotoxy(SCREAN_WIDTH/2 - 7 ,(SCREAN_HEIGTH/2));
             printf("YES");
 
             setColor(COLOR_RED);
-            gotoxy(SCREAN_WIDTH/2 + 10 ,(SCREAN_HEIGTH/2) );
+            gotoxy(SCREAN_WIDTH/2 + 3 ,(SCREAN_HEIGTH/2) );
             printf("NO");
-             gotoxy(SCREAN_WIDTH/2 + 9 ,(SCREAN_HEIGTH/2) );
+             gotoxy(SCREAN_WIDTH/2 + 2 ,(SCREAN_HEIGTH/2) );
 
         }
 
@@ -37,17 +45,19 @@ void MenuView_AskRefresh(MenuOptions* menuOption, int istrue){
 
 }
 void MenuView_Ask(MenuOptions* menuOption, int Selected){
+    char * label = MenuOptions_getLabel(menuOption,0);
+        int length = strlen(label);
         system("cls");
         setColor(COLOR_WHITE);
-        gotoxy(SCREAN_WIDTH/2 -10 ,(SCREAN_HEIGTH/2)-2 );
-        printf("%s", MenuOptions_getLabel(menuOption,0));
+        gotoxy((SCREAN_WIDTH/2 - length/2),(SCREAN_HEIGTH/2)-2 );
+        printf("%s",label );
 
         setColor(COLOR_WHITE);
-        gotoxy(SCREAN_WIDTH/2 ,(SCREAN_HEIGTH/2));
+        gotoxy(SCREAN_WIDTH/2 - 7 ,(SCREAN_HEIGTH/2));
         printf("YES");
 
         setColor(COLOR_RED);
-        gotoxy(SCREAN_WIDTH/2 + 10 ,(SCREAN_HEIGTH/2) );
+        gotoxy(SCREAN_WIDTH/2 + 3 ,(SCREAN_HEIGTH/2) );
         printf("NO");
 
         gotoxy(SCREAN_WIDTH/2 + 9 ,(SCREAN_HEIGTH/2) );

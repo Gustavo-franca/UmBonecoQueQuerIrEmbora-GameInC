@@ -32,7 +32,7 @@ int ElementList_hasThisElementIn(ElementList* elementList,Element* element,int p
 
 Element* ElementList_returnElementIn(ElementList* elementList,int positionX , int positionY);
 
-
+ElementList* ElementList_AllElementType(ElementList* arena,int type);
 
 //properties set and get
 

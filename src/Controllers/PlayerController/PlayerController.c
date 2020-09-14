@@ -5,7 +5,7 @@ Player* PlayerController_create(char symbol, int color){
     return Player_create(symbol,color);
 }
 
-void PlayerController_move(ElementList* Arena,Player* player,char keyMove){
+void PlayerController_move(Player* player,int keyMove){
           // teclado
         int playerPositionX = Player_getPositionX(player);
         int playerPositionY = Player_getPositionY(player);

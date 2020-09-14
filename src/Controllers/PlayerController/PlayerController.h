@@ -4,7 +4,7 @@
 
 Player* PlayerController_create(char symbol, int color);
 
-void PlayerController_move(ElementList* Arena,Player* player,char keyMove);
+void PlayerController_move(Player* player,int keyMove);
 
 
 #endif // PLAYERCONTROLLER_H_INCLUDED

@@ -17,5 +17,6 @@
 
 int  MenuController_Run(MenuOptions* menuOption,int optionsLenght);
 int  MenuController_Ask(MenuOptions* menuOption);
+ void MenuController_RenderInCenter(MenuOptions* menuOption,int sleep);
 
 #endif // MENUCONTROLLER_H_INCLUDED

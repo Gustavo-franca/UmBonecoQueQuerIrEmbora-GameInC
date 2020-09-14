@@ -23,8 +23,9 @@ ElementList* Arena_insertElement(ElementList* arena,Element* element ,int positi
 
 int Arena_ElementIsTransposable(ElementList* arena,int positionX,int positionY);
 
-
+ElementList* Arena_getEnemies(ElementList* arena);
 ElementList* Arena_clean(ElementList* arena);
+int Arena_SetElementRemoved(ElementList* arena,int positionX,int positionY);
 
-
+ElementList* Arena_resetPlayerPosition(ElementList* arena,Player* player,Map* mapX);
 #endif // DISPLAY_H_INCLUDED

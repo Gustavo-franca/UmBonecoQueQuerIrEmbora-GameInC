@@ -12,4 +12,6 @@ void MenuView_AskRefresh(MenuOptions* menuOption, int optionSelected);
 
 void MenuView_showWithLabel(MenuOptions* menuOption, int optionLength);
 
+void MenuView_RenderInCenter(MenuOptions* menuOption);
+
 #endif // MENUVIEW_H_INCLUDED

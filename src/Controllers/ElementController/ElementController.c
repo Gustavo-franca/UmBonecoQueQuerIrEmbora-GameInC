@@ -1,9 +1,53 @@
 #include "ElementController.h"
+#include "../../Modules/Element/ElementList/ElementList.h"
+#include "../EnemieController/EnemieController.h"
+#include "../../Modules/Player/player.h"
 
+void *ElementController_Change(ElementList* arena){
+   /*  switch(Element_type(actorElement)){
+    case BACKGROUND_TYPE :
+    break;
+    case WALL_TYPE :
+    break;
+    case OBJECT_TYPE :
+    break;
+    case OBJECT_TYPE_KEY :
+    break;
+    case OBJECT_TYPE_DOOR :
+    break;
+    case ENEMIES_TYPE :*/
+        EnemieController_Move(arena);
+    /*
+    break;
+    default:
+    break;
 
-
+    }
+*/
+}
 void ElementControllerRunEnimiesActionIn(Element* enemieElement,Element*targetElement){
 
+    switch(Element_type(targetElement)){
+    case BACKGROUND_TYPE :
+    break;
+    case WALL_TYPE :
+    break;
+    case OBJECT_TYPE :
+    break;
+    case OBJECT_TYPE_KEY :
+    break;
+    case OBJECT_TYPE_DOOR :
+    break;
+    case ENEMIES_TYPE :
+    break;
+    case PLAYER_TYPE :
+        ArenaController_PlayerKill();
+    break;
+    default:
+
+    break;
+
+    }
 }
 
 
@@ -22,17 +66,19 @@ void ElementControllerRunPlayerActionIn(Element* playerElement,Element* targetEl
     break;
     case OBJECT_TYPE_KEY :
         /*Key_runActionItPlayer(playerElement,targetElement);*/
-        Element_setKey(playerElement);
+        Player_setKey(playerElement);
         Element_setRemoved(targetElement);
 
 
     break;
     case OBJECT_TYPE_DOOR :
-        if(Element_getKey(playerElement)){
-            GameController_NextLevel();
+        if(Player_getKey(playerElement)){
+            LevelController_Finished();
         }
+//}
     break;
     case ENEMIES_TYPE :
+        ArenaController_PlayerKill();
     break;
     case PLAYER_TYPE :
     break;

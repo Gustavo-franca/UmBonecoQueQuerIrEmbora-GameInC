@@ -46,3 +46,22 @@ ElementList* Arena_insertElement(ElementList* arena,Element* element ,int positi
 int Arena_ElementIsTransposable(ElementList* arena,int positionX,int positionY){
   return ElementList_ElementIsTransposable(arena,positionX,positionY);
 }
+
+ElementList* Arena_getEnemies(ElementList* arena){
+    return ElementList_AllElementType(arena,ENEMIES_TYPE);
+}
+
+ElementList* Arena_resetPlayerPosition(ElementList* arena,Player* player,Map* mapX){
+ arena = Arena_removeElement(arena,Player_getPositionX(player),Player_getPositionY(player));
+ player = Player_setInitialPosition((Player*)player,(int)Map_initialPlayerPositionX(mapX),(int)Map_initialPlayerPositionY(mapX));
+arena = Arena_insertElement(arena,Player_getAvatar(player),Player_getPositionX(player),Player_getPositionY(player));
+ return arena;
+}
+int Arena_SetElementRemoved(ElementList* arena,int positionX,int positionY){
+         Element* element = Arena_returnElementIn(arena,positionX,positionY);
+         if(element != NULL){
+            Element_setRemoved(element);
+            return 1;
+         }
+         return 0;
+}

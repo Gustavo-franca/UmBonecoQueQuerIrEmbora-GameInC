@@ -13,7 +13,7 @@
 
 typedef struct _Properties Properties;
 
-Properties* Properties_SetInitialPropertiesForType(int type);
+Properties* Properties_SetInitialPropertiesForType(int type,void * especific);
 
 int Properties_isTransposable(Properties* properties);
 
@@ -30,5 +30,7 @@ int Properties_IsRemoved(Properties* targetProperties);
 int Properties_setKey(Properties* playerProperties);
 
 int Properties_getKey(Properties* playerProperties);
+
+void * Properties_getEspecProps(Properties* properties);
 
 #endif // PROPERTIES_H_INCLUDED

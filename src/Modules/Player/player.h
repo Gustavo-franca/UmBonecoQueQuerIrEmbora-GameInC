@@ -40,8 +40,14 @@ int Player_getPreviousPositionY(Player* player);
 
 Element* Player_getAvatar(Player* player);
 
-int Player_setKey(Player* playerElement);
+int Player_setKey(Element* playerElement);
 
-int Player_getKey(Player* playerElement);
+int Player_getKey(Element* playerElement);
+
+int Player_getLife(Element* playerElement);
+
+int Player_kill(Player* player);
+
+int Player_isDeath(Player* player);
 
 #endif // PLAYER_H_INCLUDED

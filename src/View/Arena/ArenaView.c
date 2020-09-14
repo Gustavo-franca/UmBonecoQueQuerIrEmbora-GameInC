@@ -7,7 +7,7 @@
 
 #include "../ScreanView.h"
 
-ElementList* cache ;
+ElementList* cache = NULL ;
 
 void createCache(ElementList* copyList){
     cache = ElementList_create();
@@ -27,7 +27,14 @@ void compareCacheAndClean(ElementList* newList){
         ElementList* elementFind;
     for(elementFind = cache; elementFind != NULL; elementFind = elementFind->prox) {
         if(NotRenderizedElement(newList,elementFind->element,elementFind->positionX,elementFind->positionY)){
-         remove_Element(elementFind->positionX,elementFind->positionY);
+            ElementList * aux = elementFind;
+            elementFind = elementFind->prox;
+
+          remove_Element(aux->positionX,aux->positionY);
+          cache = ElementList_removethisElement(cache,aux->element,aux->positionX,aux->positionY);
+            if(elementFind == NULL){
+                break;
+            }
         }
     }
 }
@@ -41,7 +48,6 @@ void render_Element(Element* element,int positionX,int positionY){
 void remove_Element(int positionX , int positionY){
     gotoxy(positionX,positionY);
     putchar('\0');
-    cache = ElementList_remove(cache,positionX,positionY);
     return ;
 }
 
@@ -55,10 +61,13 @@ void ArenaView_render(ElementList* arena){
     return;
 }
 void ArenaView_clean(){
-    ElementList* elementFind;
-    for(elementFind = cache; elementFind != NULL; elementFind = elementFind->prox) {
-        remove_Element(elementFind->positionX,elementFind->positionY);
+    if(cache != NULL){
+        do{
+          remove_Element(cache->positionX,cache->positionY);
+         cache = ElementList_removethisElement(cache,cache->element,cache->positionX,cache->positionY);
+        }while(cache != NULL);
     }
+
     return;
 }
 
@@ -66,13 +75,20 @@ void ArenaView_Refresh(ElementList* arena){
     ElementList* elementFind;
     for(elementFind = arena; elementFind != NULL; elementFind = elementFind->prox) {
         if(Element_IsRemoved(elementFind->element) == 1){
-            arena = ElementList_removethisElement(arena,elementFind->element,elementFind->positionX,elementFind->positionY);
-            cache = ElementList_removethisElement(cache,elementFind->element,elementFind->positionX,elementFind->positionY);
+                ElementList * aux = elementFind;
+                elementFind = elementFind->prox;
+                arena = ArenaController_removethisElement(arena,aux->element,aux->positionX,aux->positionY);
+                cache = ElementList_removethisElement(cache,aux->element,aux->positionX,aux->positionY);
+                if(elementFind == NULL){
+                break;
+                    }
+
         }else if(NotRenderizedElement(cache,elementFind->element,elementFind->positionX,elementFind->positionY)){
          render_Element(elementFind->element,elementFind->positionX,elementFind->positionY);
         }
     }
    compareCacheAndClean(arena);
+   gotoxy(0,26);
     return;
 }
 void ArenaView_renderLevel(int level){

@@ -14,7 +14,7 @@ typedef struct _MenuOptions MenuOptions;
 
 struct _MenuOptions{
     int id;
-    char label[40];
+    char label[100];
     MenuOptions* prox;
 };
 

@@ -6,6 +6,10 @@ MenuOptions* MenuOptions_Create(){
 }
 
 int MenuOptions_HasId(MenuOptions* menuOptions,int id){
+    if(menuOptions == NULL){
+        return 0;
+    }
+
         MenuOptions* optionFind;
     for(optionFind = menuOptions; optionFind != NULL; optionFind = optionFind->prox) {
             if(optionFind->id == id){

@@ -4,11 +4,15 @@
 #include "../../View/Menu/MenuView.h"
 #include "../../Uteis/pickUpKey/pickUpKey.h"
 #include "../../Uteis/console/console.h"
+#include "../../Modules/Music/music.h"
 
-
+ void MenuController_RenderInCenter(MenuOptions* menuOption,int sleep){
+     MenuView_RenderInCenter( menuOption);
+     Sleep(sleep);
+ }
 int  MenuController_Ask(MenuOptions* menuOption){
     int isTrue = 0;
-
+    Music_PlayMusicMenu();
     MenuView_Ask(menuOption,isTrue);
 
 
@@ -23,13 +27,17 @@ int  MenuController_Ask(MenuOptions* menuOption){
               isTrue = 1;
             break;
             case KEY_RIGHT:
-            isTrue = 0;
+                isTrue = 0;
             break;
             case KEY_SPACE:
             case KEY_ENTER:
+                system("cls");
+                 Music_StopMusicMenu();
                 return isTrue;
             break;
             case KEY_ESC:
+                system("cls");
+                 Music_StopMusicMenu();
                 return 0;
             break;
             }
@@ -44,6 +52,7 @@ int  MenuController_Ask(MenuOptions* menuOption){
 }
  int MenuController_Run(MenuOptions* menuOption,int optionsLenght){
     int exitLoop = 0;
+     Music_PlayMusicMenu();
 
     MenuView_show(menuOption,optionsLenght);
 
@@ -72,6 +81,7 @@ int  MenuController_Ask(MenuOptions* menuOption){
             case KEY_SPACE:
             case KEY_ENTER:
                 system("cls");
+                 Music_StopMusicMenu();
                 return optionSelected;
             break;
             case KEY_S:
@@ -83,8 +93,7 @@ int  MenuController_Ask(MenuOptions* menuOption){
 
             break;
             case KEY_ESC:
-
-                break;
+            break;
             }
 
         MenuView_refresh(menuOption,optionSelected);

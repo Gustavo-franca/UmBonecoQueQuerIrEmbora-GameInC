@@ -1,20 +1,20 @@
 #include "properties.h"
 #include <stdlib.h>
-#include "../../Controllers/GameController/GameController.h"
+
 struct _Properties {
     int type;
     int isTransposable;
     int interaction;
-    int key;
-    int isPlayer;
     int removed;
+    void * especific;
 
 };
 
-Properties* Properties_SetInitialPropertiesForType(int type){
+Properties* Properties_SetInitialPropertiesForType(int type,void * especific){
     Properties* properties = (Properties*) malloc(sizeof(Properties));
     properties->type = type;
     properties->removed = 0;
+    properties->especific = especific;
     switch(type){
     case BACKGROUND_TYPE :
         properties->isTransposable = 1;
@@ -32,12 +32,11 @@ Properties* Properties_SetInitialPropertiesForType(int type){
     break;
     case ENEMIES_TYPE :
         properties->isTransposable = 0;
-        properties->interaction = 0;
+        properties->interaction = 1;
     break;
     case PLAYER_TYPE :
         properties->isTransposable = 1;
         properties->interaction = 0;
-        properties->isPlayer = 1;        properties->key = 0;
     break;
     default:
         properties->isTransposable =0;
@@ -49,13 +48,14 @@ Properties* Properties_SetInitialPropertiesForType(int type){
 
     return properties;
 }
+
 int Properties_isTransposable(Properties* properties){
  if(properties->isTransposable == 0){
         return 0;
     }
     return 1;
-
 }
+
 int Properties_setRemoved(Properties* targetProperties){
     return targetProperties->removed = 1;
 }
@@ -64,18 +64,15 @@ int Properties_IsRemoved(Properties* targetProperties){
     return targetProperties->removed;
 }
 
-int Properties_setKey(Properties* playerProperties){
-    return playerProperties->key = 1;
-}
-
-int Properties_getKey(Properties* playerProperties){
-    return playerProperties->key;
-}
-
 int Properties_hasAction(Properties* targetProperties){
     return targetProperties->interaction;
 }
+
 int Properties_type(Properties* targetProperties){
     return targetProperties->type;
+}
+
+void * Properties_getEspecProps(Properties* properties){
+    return properties->especific;
 }
 
